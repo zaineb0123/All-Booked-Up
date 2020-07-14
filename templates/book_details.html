@@ -1,0 +1,412 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>All Booked Up</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon"  href=" {{ url_for('static', filename='img/books.ico')}}">
+
+
+		<!-- CSS here -->
+     <!-- CSS here -->
+     <link rel="stylesheet" href="  {{ url_for('static', filename='assets/css/bootstrap.min.css')}}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/owl.carousel.min.css')}}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/slicknav.css')}} ">
+     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/flaticon.css')}} ">
+     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.min.css')}} ">
+     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/magnific-popup.css')}} ">
+     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/fontawesome-all.min.css')}} ">
+     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/themify-icons.css')}} ">
+     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/slick.css')}} ">
+     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/nice-select.css')}} ">
+     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css')}} ">
+   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <style>
+           
+
+.text-center {text-align:center;}
+
+a {
+  color: tomato;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2196f3;
+}
+
+
+
+
+
+input[type=text], select , .reviews{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: black;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+
+
+
+        </style>
+    </head>
+   
+
+   <body>
+  
+
+
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+               
+                <img src="/static/img/logo/loader.gif" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+       <div class="header-area header-transparent">
+            <div class="main-header">
+               <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-2 col-lg-2 col-md-1">
+                                <div class="logo">
+                                  <a href="/homePage"><img src="/static/img/logo/logo.png" alt="All Booked Up"></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10 col-md-8">
+                                <!-- Main-menu -->
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">                                                                                                                                     
+                                            <li><a href="/homePage">Home</a></li>
+                                            <li><a href="/about">About</a></li>
+                                            </li>
+                                            <li class="add-list"><a href="#"><i class="ti-user"></i> {{ login_id }}</a>
+                                                <ul class="submenu">
+                                                    <li class="logout"><a href="logout">
+                                                       Log out</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                           
+
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+       </div>
+        <!-- Header End -->
+    </header>
+    <main>
+
+        <!-- Hero Start-->
+        <div class="hero-area2  slider-height2 hero-overly2 d-flex align-items-center ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center pt-50">
+                            <h2>Book Details</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Hero End -->
+       
+        <div class="section-top-border" style=" border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;">
+            <div class="row">
+                <div class="col-lg-8 col-md-8">
+                    <section class="sign-in" style="margin-left: 20%;" >
+                   
+                    <form method="POST">
+                        <div class="mt-10">
+                            <label for="isbn"><b>ISBN</b></label>
+                            <input type="text" name="isbn" placeholder="ISBN" 
+                                href="/api/{{ book_details.isbn }}"
+                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'ISBN'" value="{{ book_details.isbn }}" readonly
+                                > <a href="/api/{{ book_details.isbn }}"> Click here for JSON Response on this ISBN </a>
+                        </div>
+                        <div class="mt-10">
+                            <label for="title"><b>Title</b></label>
+                            <input type="text" name="title" placeholder="Title" value = "{{ book_details.title }}"
+                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" readonly
+                                class="single-input">
+                        </div>
+                        <div class="mt-10">
+                            <label for="author"><b>Author</b></label>
+                            <input type="text" name="author" placeholder="Author" value = "{{ book_details.author }}"
+                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'author'" readonly
+                                class="single-input">
+                        </div>
+                        
+                        <div class="mt-10">
+                            <label for="PublicationYear"><b>Publication Year</b></label>
+                            <input type="text" name="year" placeholder="Publication Year" value = "{{ book_details.year }}"
+                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" readonly
+                                class="single-input">
+                        </div>
+
+                      
+                       
+                        
+                                <div class="mt-10">
+                                    <label for="rating"><b>Rating</b></label>
+                               
+                                <input type="hidden" name="starsHidden"  id="starsHidden">
+                               
+                                <select name="rating" id='stars' onChange="setValue();" class="single-input reviews" >
+                                    <option disabled="disabled" selected="selected">Choose Option</option>
+                                    <option value="1">Did not like it</option>
+                                    <option value="2">It was ok</option>
+                                    <option value="3">Liked it</option>
+                                    <option value="4">Really liked it</option>
+                                    <option value="5">It was Amazing</option>
+                                </select>
+                       </div>
+
+                       
+                   
+                   
+
+                       
+                      
+                     
+                      
+                            <div class="mt-10">
+                                <label for="reviews"><b>Reviews</b></label>
+                            <textarea name="reviews" type="text" class="single-input reviews"  placeholder="Reviews" id="reviews" value="{{ book_review.review_description }}"
+                                onfocus="this.placeholder = ''" 
+                                 rows="4" cols="50"></textarea>
+                        </div>
+
+
+                        {% with messages = get_flashed_messages() %}
+   {% if messages %}
+     <ul class="flashes">
+        {% for message in messages %}
+         <div class="message_flash" style="color: red;">{{ message }}</div>
+        {% endfor %}
+    </ul>
+  {% endif %}
+ {% endwith %}
+
+
+                     
+
+                        <button type=submit class="button"  style="background-color: #45a049; height: 50px; width:200px;   
+                        ">Submit Review</button>
+
+                        </form>
+                        </section>
+                    
+                    </div>
+
+
+
+
+                        <div class="col-lg-4 col-md-4">
+                            <section class="sign-in" style="margin-left: 50%;" >
+                                <h5><b>Rating from Goodreads</b></h5>
+
+                               
+                                <div class="mt-10">
+                                   
+                                    <label for="averagerating"><b>Average Rating</b></label>
+                                    <input type="text" name="averagerating" 
+                                   
+                                         value= "{{ result.review_count }}"  readonly
+                                        >
+                                       
+                                </div>
+
+
+                                <div class="mt-10">
+                                   
+                                    <label for="averagescore"><b>Average Score</b></label>
+                                    <input type="text" name="averagescore" 
+                                        value="{{ result.average_score }}" readonly
+                                        >
+                                      
+                                    </div>
+                                    
+
+
+                              
+
+
+</section>
+                        </div>
+                        </div>
+                        </div>
+
+                       
+
+    </main>
+    <footer>
+        <!-- Footer Start-->
+        <div class="footer-area">
+            <div class="container">
+               <div class="footer-top footer-padding">
+                    <div class="row justify-content-between">
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="single-footer-caption mb-30">
+                                    <!-- logo -->
+                                    <div class="footer-logo">
+                                        <a href="/homePage"><img src="/static/img/logo/logo.png" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Quick Link</h4>
+                                    <ul>
+                                        <li><a href="/homePage">Home</a></li>
+                                        <li><a href="/about">About</a></li>
+                                       
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+               </div>
+                <div class="footer-bottom">
+                    <div class="row d-flex justify-content-between align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="footer-copy-right">
+                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <!-- Footer Social -->
+                            <div class="footer-social f-right">
+                                <a href="https://www.youtube.com/channel/UCv1hMQSoa9UYjD8IMwivzUw"><i class="fab fa-youtube"></i></a>
+                                <a href="https://thecodingpirates.wordpress.com/"><i class="fab fa-blogger-b"></i></a>
+                                
+                            </div>
+                        </div>
+                        <div class="row"></div>
+                    </div>
+               </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+    <!-- Scroll Up -->
+    <div id="back-top" >
+        
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt" style="color: #ffff;"></i></a>
+    </div>
+
+
+
+
+         <!-- JS here -->
+		<!-- All JS Custom Plugins Link Here here -->
+        <script src="static/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="static/assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="static/assets/js/popper.min.js"></script>
+        <script src="static/assets/js/bootstrap.min.js"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="static/assets/js/jquery.slicknav.min.js"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="static/assets/js/owl.carousel.min.js"></script>
+        <script src="static/assets/js/slick.min.js"></script>
+		<!-- One Page, Animated-HeadLin -->
+        <script src="static/assets/js/wow.min.js"></script>
+		<script src="static/assets/js/animated.headline.js"></script>
+        <script src="static/assets/js/jquery.magnific-popup.js"></script>
+
+		<!-- Nice-select, sticky -->
+        <script src="static/assets/js/jquery.nice-select.min.js"></script>
+		<script src="static/assets/js/jquery.sticky.js"></script>
+        
+        <!-- contact js -->
+        <script src="static/assets/js/contact.js"></script>
+        <script src="static/assets/js/jquery.form.js"></script>
+        <script src="static/assets/js/jquery.validate.min.js"></script>
+        <script src="static/assets/js/mail-script.js"></script>
+        <script src="static/assets/js/jquery.ajaxchimp.min.js"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="static/assets/js/plugins.js"></script>
+        <script src="static/assets/js/main.js"></script>
+
+        <script>
+        function setValue()
+        {
+            document.getElementById("starsHidden").value = document.getElementById("stars").value;
+        }
+        </script>
+
+
+<script>
+    $(function() {
+// setTimeout() function will be fired after page is loaded
+// it will wait for 5 sec. and then will fire
+// $(".message_flash").hide() function
+  setTimeout(function() {
+      $(".message_flash").hide('blind', {}, 500)
+  }, 5000);
+}) 
+</script>
+
+
+
+    </body>
+
+
+
+
+</html>

@@ -1,0 +1,146 @@
+
+$tablet-width: 600px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content
+  }
+}
+
+img { max-width: 100%; }
+
+#main {
+  background-color: #ccc;
+  padding: 5em 1em;
+  height: 100vh;
+  
+  .card {
+    position: relative;
+    max-width: 320px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #fff;
+    color: #333;
+    box-shadow: .125em .25em .325em rgba(0, 0, 0, .2);
+    @include tablet {
+      max-width: 400px;
+      padding-right: 1em;
+      padding-left: 1em;
+    }
+    
+    .book-info {
+      padding-top: 1em;
+      padding-right: 1em;
+      padding-left: 1em;
+      background: #fff;
+      @include tablet {
+        display: inline-block;
+        width: calc(400px - 50%);
+        padding-right: 0;
+        padding-left: 0;
+        box-shadow: none;
+      }
+    }
+    
+    .title {
+      margin-bottom: .125em;
+      font-size: 1.5em;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    
+    .byline,
+    .rating {
+      color: #666;
+      font-size: .825em;
+      line-height: 1.4;
+    }
+    
+    .byline {
+      margin-bottom: .5em;
+    }
+    
+    .rating {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      
+      .stars {
+        display: inline-block;
+        height: 20px;
+        width: 96px;
+        margin-right: .625em;
+        background-image: url('http://ui-cloud.com/res/designmoo/Rating_stars_2/previews/rating_stars.png');
+        background-position: -154px -207px; 
+        vertical-align: top;
+      }
+    }
+    
+    .about {
+      position: relative;
+      max-width: 75ch;
+      max-height: 9ch;
+      font-size: .975em;
+      line-height: 1.4;
+      overflow: hidden;
+      
+      .ellipsis {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding-left: 1ch;
+        line-height: 1.1;
+        background-color: #fff;
+      }
+    }
+    
+    .image {
+      background: cyan;
+      border: 0;
+      
+      &.cover {
+        position: relative;
+        z-index: 1;
+        display: block;
+        height: 225px;
+        width: 150px;
+        margin-right: auto;
+        margin-left: auto;
+        box-shadow: .25em .35em 1em rgba(0, 0, 0, .6);
+        @include tablet {
+          display: inline-block;
+          margin-top: -2em;
+          margin-right: .825em;
+          vertical-align: top;
+        }
+      }
+      
+      &.person {
+        height: 25px;
+        width: 25px;
+        margin-right: .25em;
+        border-radius: 50%;
+        vertical-align: middle;
+      }
+    }
+    
+    .likes {
+      margin-top: 1em;
+      padding: .625em 1em;
+      border-top: .0125em solid #ccc;
+      
+      @include tablet {
+        padding-right: 0;
+        padding-left: 0;
+      }
+      .name {
+        font-weight: 700;
+      }
+    }
+    
+    .image-container {
+      position: relative;
+      .image.person {
+      }
+    }
+  }
+}
