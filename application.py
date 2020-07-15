@@ -33,7 +33,7 @@ db = scoped_session(sessionmaker(bind=engine))
 
 
 
-@app.route('/login', methods=['get', 'post'])
+@app.route('/', methods=['get', 'post'])
 def login():
     if request.method == 'POST':
         session.pop('login_id', None)        
