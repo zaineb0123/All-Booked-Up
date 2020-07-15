@@ -45,7 +45,7 @@ def login():
         # Make sure user exists.
         if db.execute("SELECT * FROM users WHERE login_id = :login_id AND password = :password ", {"login_id": login_id, "password": password}).rowcount == 1:
             session['login_id'] = request.form.get("login_id")
-            return redirect(url_for('homePage'))
+            return redirect(url_for('/homePage'))
         else:
             flash('Invalid user ID or password')
             return render_template("login.html")
