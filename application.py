@@ -11,7 +11,7 @@ from psycopg2._psycopg import cursor
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-app = Flask(__name__, template_folder='../templates')
+app = Flask(__name__, template_folder='templates')
 
 app.config['DATABASE_URL'] = "postgres://nfsspsyiahwqcm:b48f99892e6cb2abe36ed571f673cef2997deb4f1d25da8fe571f283d62ec0f5@ec2-23-20-129-146.compute-1.amazonaws.com:5432/d7d6t9lfnshmas"
 app.secret_key = b'_?:"{:L?L@#$ERDGFG:{:{'
