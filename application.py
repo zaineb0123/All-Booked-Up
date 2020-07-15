@@ -45,7 +45,7 @@ def login():
         # Make sure user exists.
         if db.execute("SELECT * FROM users WHERE login_id = :login_id AND password = :password ", {"login_id": login_id, "password": password}).rowcount == 1:
             session['login_id'] = request.form.get("login_id")
-            return redirect(url_for("homePage"))
+            return redirect(url_for("homepage"))
         else:
             flash('Invalid user ID or password')
             return render_template("login.html")
@@ -72,8 +72,8 @@ def signUp():
         return render_template("signUp.html")
 
 
-@app.route("/homePage",  methods=['GET', 'POST'])
-def homePage():
+@app.route("/homepage",  methods=['GET', 'POST'])
+def homepage():
     if 'login_id' in session: 
         if request.method == 'POST':
             bookSearch = request.form.get("bookSearch")
