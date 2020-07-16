@@ -66,7 +66,7 @@ def signUp():
         db.execute("INSERT INTO users (first_name, last_name, login_id, password) VALUES(:first_name, :last_name, :login_id, :password)",
         {"first_name": first_name, "last_name" : last_name, "login_id": login_id, "password": password})
         db.commit()
-        return render_template("login.html")
+        return redirect(url_for('login'))
 
     else:
         return render_template("signUp.html")
