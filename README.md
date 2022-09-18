@@ -6,14 +6,14 @@ It was created for Harvard's CS50 web programming with Python and JavaScript cou
 You can check it out at https://all-booked-up.herokuapp.com/
 
 
-![Screenshot (51)](https://user-images.githubusercontent.com/56018791/190898145-e8d1359d-d404-4b9c-a0e5-94f7ff79df32.png)
-![Screenshot (52)](https://user-images.githubusercontent.com/56018791/190898148-a6da1eb3-b580-449f-b314-16da22700722.png)
-![Screenshot (53)](https://user-images.githubusercontent.com/56018791/190898149-a5121ffb-175c-4d56-b293-f3b6cfd29a5c.png)
-![Screenshot (54)](https://user-images.githubusercontent.com/56018791/190898151-71be0a98-ce4d-4a53-8f1c-576334e48ced.png)
-![Screenshot (55)](https://user-images.githubusercontent.com/56018791/190898152-f932e81e-3dc2-4003-99ba-9b95e311ed79.png)
 
-
-
+<img width="911" alt="Screenshot (51)" src="https://user-images.githubusercontent.com/56018791/190898711-7d8ebbce-b01a-4baf-a531-84e29d3a3552.png">
+<img width="912" alt="Screenshot (52)" src="https://user-images.githubusercontent.com/56018791/190898677-9442a046-f077-4407-b52d-329f847cd2e9.png">
+<img width="906" alt="Screenshot (53)" src="https://user-images.githubusercontent.com/56018791/190898681-ccbe5f7d-100d-4178-b93f-0dc11ae19ef2.png">
+<img width="913" alt="Screenshot (54)" src="https://user-images.githubusercontent.com/56018791/190898692-fb381f2f-bfc7-40df-b067-ebbf060ef517.png">
+<img width="900" alt="Screenshot (55)" src="https://user-images.githubusercontent.com/56018791/190898698-dd0ee80a-e588-4ac2-8355-1f6d37ed770f.png">
+![Screenshot (56)](https://user-images.githubusercontent.com/56018791/190898700-2df9d02f-d82a-4eb2-98d0-cfccd0f8368b.png)
+![Screenshot (57)](https://user-images.githubusercontent.com/56018791/190898707-a70d3ca2-3962-4bfe-98c3-3c4c738696be.png)
 
 Please note that this is an old project, GoodReads no longer offer a public API key. 
 You can find more here https://www.goodreads.com/api/index
